@@ -18,7 +18,7 @@ li{
 a{
     display: block;
     text-decoration: none;
-    color: #898989;
+    color: #333;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -31,9 +31,15 @@ body{
     background-color: #f6f1eb;
 }
 
+/* html, body{
+    overflow-x: hidden;
+} */
+
 .wrap{
     width: 100%;
 }
+
+/* PC버전 */
 
 header{
     width: 100%;
@@ -48,6 +54,10 @@ header{
     align-items: center;
     padding: 0 4vw;/* 장치의 가로길이를 기준으로 크기를 설정함 */
     box-shadow: 0 8px 16px hsla(30,21%,81%,.15);
+}
+
+header .ham_menu{
+    display: none;
 }
 
 header div, header ul{
@@ -76,7 +86,7 @@ header nav ul li a:hover, header .member ul li a:hover{
 }
 
 header .member ul li a{
-    color: #898989;
+    color: #333;
     padding-left: 1vw;
     font-size: 1.5vh;
 }
@@ -95,6 +105,7 @@ header .member ul li a{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100vw;
     /* 
     display: flex;
     flex-flow: column nowrap;
@@ -149,11 +160,14 @@ header .member ul li a{
     top: 50%;
     margin-top: 10vw;
     transition: all 0.3s;
+
 }
 
 .swiper1 .arrow:hover{
     margin-left: -36.5vw;
 }
+
+
 
 
 /* section.collection */
@@ -162,8 +176,7 @@ header .member ul li a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 120px 0;
-    gap: 180px;
+    margin-top: 7vw;
 }
 
 .collection .c_slide{
@@ -225,7 +238,825 @@ header .member ul li a{
     top: 0;
     width: 12vw;
     height: 100%;
-    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
     z-index: 2;
 }
 
+
+
+/* section.escapades */
+.escapades{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7vw;
+}
+
+/* .escapades 타이틀 */
+.escapades .e_title{
+    width: 30%;
+    padding-left:10vw;
+}
+
+.escapades .e_title p{
+    font-size: 1.2vw;
+}
+
+.escapades .e_title hr{
+    width: 8vw;
+}
+
+.escapades .e_title h1{
+    font-size: 2.2vw;
+}
+
+
+/* .escapades 슬라이드 */
+.escapades .e_slide{
+    width: 61%;
+}
+
+.escapades .e_slide .swiper3 .swiper-slide{
+    overflow: hidden;
+}
+
+.escapades .e_slide .swiper3 .swiper-slide a .e_img{
+    width: 100%;
+    overflow: hidden;
+    height: 20vw;
+    border: 1px solid #ddd;
+}
+
+.escapades .e_slide .swiper3 .swiper-slide a .e_img img{
+    transform: scale(1, 1);
+    transition: all 0.5s;
+
+}
+
+.escapades .e_slide .swiper3 .swiper-slide .e_img:hover img{
+    transform: scale(1.1, 1.1);
+}
+
+.escapades .e_slide .swiper3 .swiper-slide .e_des{
+    margin-top: 15px;
+}
+
+.escapades .e_slide .swiper3 .swiper-slide .e_des p{
+    text-align: left;
+    color: #333;
+    font-size: 1.6vh;
+}
+
+
+
+/* escapades 슬라이드 오른쪽 하얗게 그라데이션 */
+.escapades .swiper3:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12vw;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    z-index: 2;
+}
+
+
+/* banner영역 */
+.banner{
+    width: 100%;
+    background-color:#efefef ;
+    margin-top: 10vw;
+}
+
+.banner > div{
+    width: 100%;
+}
+
+.banner article {
+    /* article영역 안의 .banner_img와 .banner_txt를 가로로 정렬 */
+    display: flex;
+    width:100%;
+    height:100vh;
+    padding:7vw 10vw;
+    overflow: hidden;
+}
+
+/* 배너 안의 .banner_img, .banner_txt 스타일 */
+.banner article > div {
+    /* width:50%; */
+    /* div안의 이미지와 글자를 세로 가운데로 정렬 */
+    display: flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner article .banner_txt {
+    width:40%;
+    align-items: flex-start;
+}
+
+.banner article .banner_img {
+    width:60%;    
+}
+
+/* 배너 안의 .banner_img의 자식 객체 div 스타일 */
+.banner article .banner_img div {
+    padding:0;
+    width:100%;
+    position: absolute;
+    /* padding:5vw; */
+}
+
+/* 스크롤이벤트 스타일 추가 */
+.banner article .banner_img .b1{
+    opacity: 1;
+}
+
+.banner article .banner_img .b2{
+    opacity: 0;
+}
+
+
+.banner article h1 {
+    font-size:1.5vw;
+    margin-bottom: 2vw;    
+}
+.banner article p {
+    width: 80%;
+    font-size:0.8vw;
+    line-height: 1.2vw;
+}
+
+.banner .korea .banner_img div {
+    width:30vw;
+}
+
+
+
+.banner .timeline .banner_img > div {
+    width:30vw;
+    top:5vw;
+}
+
+.banner .timeline .banner_img .bWrap {
+    width:100%;
+    height: 100%;
+    top:110vw;
+    left:0;
+}
+.banner .timeline .banner_img .bWrap .b3 {
+    width:30vw;
+    top:-2vw;
+    left:0;
+    position: absolute;
+}
+.banner .timeline .banner_img .bWrap .b4 {
+    width:30vw;
+    bottom:-2vw;
+    right:0;
+    position: absolute;
+}
+
+
+.banner .sustainable .banner_img div {
+    width:13.5vw;
+    height: 100%;
+    position: absolute;
+}
+.banner .sustainable .banner_img .b1 {
+    top:100vw;
+    left:0;
+}
+.banner .sustainable .banner_img .b2 {
+    top:5vw;
+    left:17vw;
+    opacity:1;
+}
+.banner .sustainable .banner_img .b3 {
+    top:110vw;
+    right:0vw;
+}
+.banner .sustainable .banner_img .b4 {
+    top:90vw;
+    right:0vw;
+}
+
+
+
+/* section.gallery */
+.gallery{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 7vw 0;
+    margin-bottom: 10vw;
+}
+
+.gallery .gallery_txt{
+    width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .gallery_txt span{
+    display: block;
+    width: 3vw;
+    margin-bottom: 2vw;
+}
+
+.gallery .gallery_txt h1{
+    font-size: 1.5vw;
+}
+
+
+.gallery .gallery_img{
+    width: 55%;
+}
+
+.gallery .gallery_img ul{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: fit-content(25%) 1fr;
+    gap: 0.5vw;
+}
+
+.gallery .gallery_img ul li{
+    width: 10.42vw;
+    height: 10.42vw;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.gallery .gallery_img ul li.g01{
+    background-image: url(../img/section06/gallery01.jpg);
+}
+
+.gallery .gallery_img ul li.g02{
+    background-image: url(../img/section06/gallery02.jpg);
+}
+
+.gallery .gallery_img ul li.g03{
+    background-image: url(../img/section06/gallery03.jpg);
+}
+
+.gallery .gallery_img ul li.g04{
+    background-image: url(../img/section06/gallery04.jpg);
+}
+
+.gallery .gallery_img ul li.g05{
+    background-image: url(../img/section06/gallery05.jpg);
+}
+
+.gallery .gallery_img ul li.g06{
+    background-image: url(../img/section06/gallery06.jpg);
+    background-position: bottom center;
+}
+
+.gallery .gallery_img ul li.g07{
+    background-image: url(../img/section06/gallery07.jpg);
+}
+
+.gallery .gallery_img ul li.g08{
+    background-image: url(../img/section06/gallery08.jpg);
+}
+
+.gallery .gallery_img ul li.g09{
+    background-image: url(../img/section06/gallery09.jpg);
+}
+
+.gallery .gallery_img ul li.g10{
+    background-image: url(../img/section06/gallery10.jpg);
+}
+
+.gallery .gallery_img ul li.g11{
+    background-image: url(../img/section06/gallery11.jpg);
+    
+    background-position: center;
+}
+
+.gallery .gallery_img ul li.g12{
+    background-image: url(../img/section06/gallery12.jpg);
+}
+
+.gallery .gallery_img ul li.g13{
+    background-image: url(../img/section06/gallery13.jpg);
+}
+
+.gallery .gallery_img ul li.g14{
+    background-image: url(../img/section06/gallery14.jpg);
+}
+
+.gallery .gallery_img ul li.g15{
+    background-image: url(../img/section06/gallery15.jpg);
+}
+
+.gallery .gallery_img ul li.g16{
+    background-image: url(../img/section06/gallery16.jpg);
+    background-position: center;
+}
+
+.gallery .gallery_img ul li.g17{
+    background-image: url(../img/section06/gallery17.jpg);
+    background-position: bottom center;
+}
+
+.gallery .gallery_img ul li.g18{
+    background-image: url(../img/section06/gallery18.jpg);
+}
+
+.gallery .gallery_img ul li.g19{
+    background-image: url(../img/section06/gallery19.jpg);
+    background-position: bottom center;
+}
+
+.gallery .gallery_img ul li.g20{
+    background-image: url(../img/section06/gallery20.jpg);
+    background-position: bottom center center;
+}
+
+
+
+/* 푸터 */
+footer{
+    width: 100%;
+    height: 80vh;
+    background-color: #fefefe;
+    padding: 0 10vw;
+    color: #454545;
+}
+
+footer a, footer p, footer ul li{
+    white-space: nowrap;
+}
+
+footer > div{
+    width: 100%;
+}
+
+
+/* 푸터에 구독 */
+footer .subscribe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 340px;
+    border-bottom: 1px solid #ccc;
+}
+
+footer .subscribe .s_txt{
+    width: 50%;
+}
+
+footer .subscribe .s_txt h1{
+    margin-bottom: 20px;
+}
+
+footer .subscribe .s_form{
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2vh;
+}
+
+footer .subscribe .s_form input.email, footer .subscribe .s_form button{
+    width: 24vw;
+    height: 5.5vh;
+    line-height: 5.5vh;
+}
+
+footer .subscribe .s_form label{
+    width: 24vw;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+footer .subscribe .s_form label input{
+    width: 25px;
+    margin-right: 15px;
+}
+
+footer .subscribe .s_form label span{
+    width: 21vw;
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* 푸터에 아래 섹션 .info */
+footer .info{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 13px;
+    padding-top: 20px;
+}
+
+footer .info address{
+    width: 33%;
+    font-style: normal;
+}
+
+footer .info address ul li{
+    padding-bottom: 5px;
+}
+
+footer .info address ul li a{
+    display: inline-block;
+}
+
+
+/* 푸터에 고객센터.cs */
+footer .info .cs{
+    width: 33%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+footer .info .cs h1, footer .info .loc h1{
+    line-height: 1;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+footer .info .cs a{
+    display: inline-block;
+}
+
+footer .info .loc{
+    width: 33%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+footer .info .loc a{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+footer .f_logo{
+    width: 100%;
+}
+
+footer .f_logo a{
+    text-align: center;
+}
+
+footer .f_logo a img{
+    width: 100px;
+    filter: invert(45%) sepia(1%) saturate(1344%) hue-rotate(26deg) brightness(90%) contrast(97%);
+}
+
+
+
+
+
+/* 태블릿 버전- 해상도 768px~1023px */
+@media all and (min-width:768px) and (max-width:1023px){
+    header{
+        height: 65px;
+    }
+
+    header .menu_area{
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        background-color: #fff;
+        padding: 16vw 10vw;
+        width: 60vw;
+        height: 100vh;
+        flex-flow: column nowrap;
+    }
+
+    header .menu_area nav{
+        order: 2;
+        width: 100%;
+        margin-top: 5vw;
+        border-top: 1px solid #333;
+        padding: 5vw 0;
+    }
+
+    header .menu_area nav ul{
+        flex-flow: column nowrap;
+    }
+
+    header .menu_area nav ul li{
+        width: 100%;
+    }
+
+    header .menu_area nav ul li a{
+        padding: 1vw;
+        text-align: left;
+        font-size: 3vw;
+        padding: 2vw 0;
+    }
+
+    header .menu_area .member{
+        order: 1;
+        width: 100%;
+    }
+
+    header .menu_area .member ul{
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+
+    
+
+    
+
+    header .logo{
+        width: 15vw;
+    }
+
+    header .logo a img{
+        width: 100%;
+    }
+
+    header .ham_menu{
+        display: block;
+        position: relative;
+        z-index: 200;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    header .ham_menu span{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid #333;
+        transition: all 0.8s;
+    }
+
+    header .ham_menu span:first-child{
+        top: 0;
+    }
+
+    header .ham_menu span:nth-child(2){
+        top: calc(50% - 1px);
+    }
+
+    header .ham_menu span:last-child{
+        bottom: 0;
+    }
+
+    header .ham_menu.active span:first-child{
+        transform: rotateZ(45deg);
+        top: calc(50% - 6px);
+        left: 2px;
+        width: 50%;
+    }
+
+    header .ham_menu.active span:nth-child(2){
+        transform: rotateZ(-45deg);
+        bottom: calc(50% - 1px);
+    }
+
+    header .ham_menu.active span:last-child{
+        transform: rotateZ(45deg);
+        bottom: calc(50% - 7px);
+        left: calc(50% - 2px);
+        width: 50%;
+    }
+
+    /* 태블릿 메인 슬라이드 */
+    .main{
+        width: 100vw;
+        height: 50vh;
+    }
+    
+    .main .swiper{
+        width: 100%;
+        height: 100%;
+    }
+
+    .main .swiper .swiper-slide{
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        /* 
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items:flex-start;
+        padding: 0 12vw;
+         */
+    }
+
+    /* 메인슬라이드의 페이지네이션 */
+    .swiper1 .swiper-pagination{
+        margin-left: -35.5vw;
+        top: 50%;
+        margin-top: 14vw;
+    }
+
+    .swiper1 .swiper-pagination-bullet{
+        border-radius: 0;
+        width: 10px;
+        height: 10px;
+    }
+
+    .swiper1 .swiper-pagination-bullet-active{
+        width: 24px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* 화살표 */
+    .swiper1 .arrow{
+        display: none;
+    }
+
+
+    /* .collection */
+    .collection{
+        flex-flow: column nowrap;
+    }
+
+    .collection .c_title{
+        order: 1;
+        width: 100%;
+        margin-left: 10vw;
+        padding-left: 0;
+    }
+
+    .collection .c_title p{
+        font-size: 3vw;
+        line-height: 4.5vw;
+    }
+
+    .collection .c_title hr{
+        height: 1px;
+        width: 25vw;
+    }
+
+    .collection .c_title h1{
+        font-size: 5vw;
+        margin-bottom: 10vw;
+    }
+
+    .collection .c_slide{
+        order: 2;
+        width: 100%;
+    }
+
+    .collection .c_slide .swiper2 .swiper-slide a .c_img{
+        height: 32.9vw;
+    }
+
+    .collection .swiper2:before{
+        display: none;
+    }
+
+    .collection .swiper2:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 15vw;
+        height: 100%;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+        z-index: 5;
+    }
+
+
+    /* .escapades */
+    .escapades{
+        flex-flow: column nowrap;
+        margin-top: 20vw;
+    }
+
+    .escapades .e_title{
+        width: 100%;
+        margin-left: 10vw;
+        padding-left: 0;
+    }
+
+    .escapades .e_title p{
+        font-size: 3vw;
+        line-height: 4.5vw;
+    }
+
+    .escapades .e_title hr{
+        height: 1px;
+        width: 35vw;
+    }
+
+    .escapades .e_title h1{
+        font-size: 5vw;
+        margin-bottom: 10vw;
+    }
+
+    .escapades .e_slide{
+        order: 2;
+        width: 100%;
+        margin-left: 10vw;
+    }
+
+    .escapades .e_slide .swiper3 .swiper-slide a .e_img{
+        height: 32.9vw;
+    }
+
+
+
+    /* .banner */
+    .banner article{
+        flex-flow: column nowrap;
+        padding: 10vw 0;
+    }
+
+    .banner article .banner_txt{
+        width: 100%;
+        padding-left: 10vw;
+    }
+
+    .banner article .banner_img{
+        width: 100%;
+        margin-left: 10vw;
+        padding-left: 0;
+    }
+
+    .banner article .banner_txt h1{
+        font-size: 5.5vw;
+        margin-bottom: 5vw;
+    }
+
+    .banner article .banner_txt p{
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    .banner .korea .banner_img div{
+        width: 70vw;
+
+    }
+
+    .banner .timeline .banner_img div{
+        width: 70vw;
+
+    }
+
+    .banner .timeline .banner_img .bWrap .b3{
+        width: 60vw;
+    }
+
+    .banner .timeline .banner_img .bWrap .b4{
+        width: 60vw;
+    }
+
+    .banner .sustainable .banner_img{
+        width: 100%;
+    }
+
+    .banner .sustainable .banner_img div{
+        width: 40vw;
+    }
+
+
+    .gallery{
+        flex-flow: column nowrap;
+        margin-top: 10vw;
+        align-items: center;
+    }
+    .gallery .gallery_txt{
+        width: 100%;
+    }
+
+    .gallery .gallery_txt h1{
+        font-size: 5vw;
+        width: 30vw;
+    }
+
+    .gallery .gallery_img{
+        width: 91%;
+        height: 67vh;
+    }
+
+
+
+}
+
+
+
+/* 모바일 버전- 해상도 360px~767px */
+@media all and (max-width: 767px){
+    
+}
