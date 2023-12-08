@@ -802,7 +802,7 @@ footer .f_logo a img{
         left: 0;
         width: 100%;
         border-bottom: 2px solid #333;
-        transition: all 0.8s;
+        transition: all 0.5s;
     }
 
     header .ham_menu span:first-child{
